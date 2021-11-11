@@ -1,20 +1,20 @@
-package kata4.main;
+package kata5p2.main;
 
-import kata4.model.Mail;
+import kata5p2.model.Mail;
 import java.util.List;
-import kata4.model.Histogram;
-import kata4.view.HistogramDisplay;
-import kata4.view.MailHistogramBuilder;
-import kata4.view.MailListReader;
+import kata5p2.model.Histogram;
+import kata5p2.view.HistogramDisplay;
+import kata5p2.view.MailHistogramBuilder;
+import kata5p2.view.MailListReaderBD;
 
-public class Kata4 {
+public class Kata5P2 {
 
     private String filename;
     private List<Mail> mailList;
     private Histogram<String> histogram;
     private HistogramDisplay histoDisplay;
     
-    public Kata4(String filename)
+    public Kata5P2(String filename)
     {
         this.filename = filename;
     }
@@ -28,7 +28,7 @@ public class Kata4 {
     
     public void input()
     {
-        mailList = MailListReader.read(filename);
+        mailList = MailListReaderBD.read(filename);
     }
     
     public void process()
@@ -43,7 +43,7 @@ public class Kata4 {
     }
     
     public static void main(String[] args) {
-        Kata4 control = new Kata4("email.txt");
+        Kata5P2 control = new Kata5P2("email.txt");
         control.execute();
     }    
 }
